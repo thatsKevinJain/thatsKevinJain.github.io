@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style/main.css"/>
+		<link rel="stylesheet" href="style/markdown.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+		<h2>Add a new blog</h2>
+
+		<form id="add-blog-form" method="post" action="https://jar-backend-8a826bb5171f.herokuapp.com/blog/add">
+
+			<label for="name">Name of blog</label><br>
+			<input type="text" id="name" name="name" value="why-use-markdown"><br><br>
+
+			<label for="categoryName">Category Name</label><br>
+			<input type="text" id="categoryName" name="categoryName" value=""><br><br>
+
+			<label for="title">Title</label><br>
+			<input type="text" id="title" name="title" value="Why Use Markdown"><br><br>
+
+			<label for="markdown">Markdown</label><br>
+			<textarea id="markdown" name="markdown"># Hello World</textarea><br>
+
+			<button type="submit">Add</button>
+
+		</form>
+
+		<p>
+			1 - Journey			<br>
+			2 - Short Stories	<br>
+			3 - Technology		<br>
+			4 - Thoughts		<br>
+			5 - Poem			<br>
+		</p>
+	</body>
+</html>

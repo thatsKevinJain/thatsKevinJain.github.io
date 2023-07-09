@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+		<h2><strong>Edit blog</strong></h2>
+
+		<p>
+			<br>
+			<strong>STEPS</strong><br>
+			1 - Copy the <strong>Blog Name</strong> from the website.<br>
+			2 - Press <strong>Find Blog</strong>.<br>
+			3 - Edit all necessary details details<br>
+			4 - Press <strong>Edit</strong> button!<br>
+			5 - Check the "Blog" section on the website! Enjoy!<br>
+		</p>
+
+		<p>
+			---- Categories ----<br>
+			1 - Journey			<br>
+			2 - Short Stories	<br>
+			3 - Technology		<br>
+			4 - Thoughts		<br>
+			5 - Poem			<br>
+			--------------------<br>
+		</p>
+
+		<div id="drop">
+			<input type="text" id="name" value="home"><br><br>
+			<button onclick="findBlog()">Find Blog</button>
+		</div>
+
+		<br><br><br><br>
+		<div>
+
+			<label for="categoryName">Category Name</label><br>
+			<input type="text" id="categoryName" name="categoryName" value=""><br><br>
+
+			<label for="title">Title</label><br>
+			<input type="text" id="title" name="title" value="Why Use Markdown"><br><br>
+
+			<label for="markdown">Markdown</label><br>
+			<textarea id="markdown" name="markdown"># Hello World</textarea><br>
+
+			<button type="submit" height="200px" width="200px" onclick="editBlog()">Edit</button>
+		</div>
+
+		<br><br><br><br>
+		<div id="output"></div>
+
+		<script type="text/javascript">
+			var output = document.getElementById("output")
+			const BASE_URL = 'https://jar-backend-8a826bb5171f.herokuapp.com'
+			function findBlog(){
+				var name = document.getElementById("name").value
+				const userAction = async () => {
+					const response = await fetch(`${BASE_URL}/blog/fetch`, {
+						method: 'POST',
+						body: JSON.stringify({ name: name }),
+						headers: {
+							'Content-Type': 'application/json'
+						}
+					});
+					const body = await response.json();
+
+					document.getElementById("title").value = body.title;
+					document.getElementById("name").value = body.name;
+					document.getElementById("categoryName").value = body.categoryName;
+					document.getElementById("markdown").value = body.markdown;
+				}
+				userAction();
+			}
+
+			function editBlog(){
+				const newBody = {};
+				newBody['title'] = document.getElementById("title").value
+				newBody['name'] = document.getElementById("name").value
+				newBody['categoryName'] = document.getElementById("categoryName").value
+				newBody['markdown'] = document.getElementById("markdown").value
+
+				console.log(newBody);
+
+				var name = document.getElementById("name").value
+
+				const userAction = async () => {
+					const response = await fetch(`${BASE_URL}/blog/update?name=${name}`, {
+						method: 'POST',
+						body: JSON.stringify(newBody),
+						headers: {
+							'Content-Type': 'application/json'
+						}
+					});
+					const myJson = await response.json();
+					output.innerHTML = JSON.stringify(myJson,null,4);
+				}
+				userAction();
+			}
+		</script>
+	</body>
+</html>
