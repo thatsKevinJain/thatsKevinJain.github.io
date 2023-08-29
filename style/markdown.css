@@ -8,18 +8,24 @@
 	box-shadow: 0px 0px 2px grey;
 	width: calc(70%);
 	margin: auto;
-}
+}*/
 
-@media screen and (max-width: 640px) {
+/*@media screen and (max-width: 640px) {
 	#outer-markdown {
 		width: calc(99%);
 	}
 }*/
 
 #inner-markdown {
-	max-width: 600px;
+	max-width: 60%;
 	margin: auto;
 	text-align: left;
+}
+
+@media screen and (max-width: 640px) {
+	#inner-markdown {
+		width: calc(99%);
+	}
 }
 
 #inner-markdown img {
