@@ -17,9 +17,15 @@
 }*/
 
 #inner-markdown {
-	max-width: 600px;
+	max-width: 60%;
 	margin: auto;
 	text-align: left;
+}
+
+@media screen and (max-width: 640px) {
+	#inner-markdown {
+		width: calc(99%);
+	}
 }
 
 #inner-markdown img {
