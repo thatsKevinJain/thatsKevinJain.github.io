@@ -16,7 +16,6 @@
 //      INIT      //
 ////////////////////
 const BASE_URL="https://jar-backend-8a826bb5171f.herokuapp.com"
-// const BASE_URL="https://backend.justanotherripple.com"
 // const BASE_URL="http://localhost:3000"
 
 const converter = new showdown.Converter();
@@ -37,13 +36,10 @@ const pathname = window.location.pathname
 
 switch(pathname){
 
-	case "/": 	populateBody("home");
+	case "/": 	fetchBlog();
 				break;
 
 	case "/views/about": 	populateBody("about");
-							break;
-
-	case "/views/blog":		fetchBlog();
 							break;
 
 	default: console.log("Incorrect pathname: " + pathname);
