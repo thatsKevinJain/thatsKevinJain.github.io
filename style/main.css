@@ -3,11 +3,14 @@
 /* =================== */
 
 body {
-	font-weight: 300;
-	font-family: courier, monospace;
+	font-weight: 400;
+/*	font-family: courier, monospace;*/
+	font-family: 'Poppins', sans-serif;
+    font-style: normal;
 	/*background-color: #000;*/
 	/*color: #fff;*/
-	line-height: 22px;
+	line-height: 38px;
+	font-size: 18px;
 }
 
 /* =================== */
@@ -24,9 +27,9 @@ body {
 #navbar {
 	overflow: hidden;
 	background-image: linear-gradient(#000000, #1f1f1f);
-	border-radius: 8px;
+	border-radius: 14px;
 	width: calc(80%);
-	margin: auto auto 8px auto;
+	margin: auto auto auto auto;
 }
 
 @media screen and (max-width: 640px) {
@@ -46,7 +49,7 @@ body {
 
 #navbar a.home{
 	float: left;
-	padding: 6px 0px 6px 28px;
+	padding: 14px 0px 0px 24px;
 }
 
 #navbar img {
