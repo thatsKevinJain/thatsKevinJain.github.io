@@ -81,10 +81,12 @@
 }
 
 #inner-markdown code {
-	padding: 3px 3px;
+	padding: 4px;
+	overflow: auto;
+	font-size: 14px;
+	line-height: 1.45;
 	border-radius: 4px;
-	background: #a3a3a3;
-	font-style: italic;
+	background: #eee;
 }
 
 #inner-markdown pre {
@@ -96,16 +98,22 @@
 	border: 1px solid #334;
 	white-space: pre;
 	white-space: pre-wrap;
-	word-wrap: break-word;
-	background-color: #f6f8fa;
-	border-radius: 4px;
+	word-wrap: normal;
+	background-color: #eefdff;
+	border-radius: 3px;
+	overflow: auto;
 }
 
 #inner-markdown pre code {
-	font-size: 12px;
+	display: inline;
+	max-width: auto;
 	padding: 0;
-	background: transparent;
-	color: black;
+	margin: 0;
+	overflow: visible;
+	line-height: inherit;
+	word-wrap: normal;
+	background-color: transparent;
+	border: 0;
 }
 
 #inner-markdown sup {
