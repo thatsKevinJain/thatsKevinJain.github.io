@@ -5,7 +5,7 @@ date:   2026-07-23
 categories: jekyll update
 ---
 
-The age of AI here, and if you're like me, you will notice that the
+The age of AI is here, and if you're like me, you will notice that the
 shift from programming code by hand to having it written by AI
 happened so fast that you barely got time to adjust to this new reality.
 
